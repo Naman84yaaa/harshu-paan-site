@@ -1718,10 +1718,6 @@
               <span>Guna, Madhya Pradesh</span>
             </a>
 
-            <a class="contact-line" data-instagram-link href="#order">
-              <span class="contact-line-icon">◎</span>
-              <span data-site-instagram>@yourinstagram</span>
-            </a>
           </div>
         </div>
 
@@ -1828,8 +1824,7 @@
       businessName: "Harshu Paan Bhandar",
       whatsapp: "916265262847",
       phone: "+91 9753099581",
-      email: "naman84yaa.com",
-      instagram: "yourinstagram"
+      email: "naman84yaa.com"
     };
 
     const MENU = [
@@ -1968,10 +1963,6 @@
     function setSiteDetails() {
       const phoneValue = String(SITE.phone || "").trim();
       const emailValue = String(SITE.email || "").trim();
-      const instagramHandle = String(SITE.instagram || "")
-        .replace(/^@/, "")
-        .trim();
-
       document.title = `${SITE.businessName} | Shaadi & Event Paan Catering`;
 
       document.querySelectorAll(".brand-name, .footer-brand").forEach((element) => {
@@ -1984,12 +1975,6 @@
 
       document.querySelectorAll("[data-site-email]").forEach((element) => {
         element.textContent = emailValue || "Email unavailable";
-      });
-
-      document.querySelectorAll("[data-site-instagram]").forEach((element) => {
-        element.textContent = instagramHandle
-          ? `@${instagramHandle}`
-          : "Instagram unavailable";
       });
 
       const phoneLink = document.querySelector("[data-phone-link]");
@@ -2006,14 +1991,6 @@
           : "#order";
       }
 
-      const instagramLink = document.querySelector("[data-instagram-link]");
-      if (instagramLink) {
-        instagramLink.href = instagramHandle
-          ? `https://www.instagram.com/${instagramHandle}/`
-          : "#order";
-        instagramLink.target = "_blank";
-        instagramLink.rel = "noopener";
-      }
     }
 
     document.querySelectorAll("[data-wa]").forEach((button) => {
